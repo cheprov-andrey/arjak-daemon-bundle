@@ -1,0 +1,31 @@
+{
+  "name": "arjak/daemon-bundle",
+  "version": "0.1.0",
+  "type": "symfony-bundle",
+  "description": "Micro-application for running and executing tasks in the background",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "CHeprov Andrey",
+      "email": "cheprov.andrey.93@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "doctrine/annotations": "^1.12"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "arjak\\DaemonBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "arjak\\DaemonBundle\\Tests\\": "tests/"
+    }
+  }
+}
