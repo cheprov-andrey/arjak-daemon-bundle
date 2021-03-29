@@ -5,6 +5,7 @@ namespace arjak\DaemonBundle;
 use \Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+use function dirname;
 
 /**
  * Class DaemonKernel
@@ -17,7 +18,7 @@ class DaemonKernel extends Kernel
     /**
      * @return DaemonBundle[]
      */
-    public function registerBundles()
+    public function registerBundles(): array
     {
         return [
             new DaemonBundle()
@@ -30,5 +31,13 @@ class DaemonKernel extends Kernel
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
         $routes->import(__DIR__.'/../../config/routes.yaml');
+    }
+
+    /**
+     * @return string
+     */
+    public function getProjectDir() : string
+    {
+        return dirname(__DIR__);
     }
 }
